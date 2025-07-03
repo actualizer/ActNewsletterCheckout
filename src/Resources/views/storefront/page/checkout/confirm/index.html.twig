@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_confirm_tos %}
+    {{ parent() }}
+    
+    {% set newsletterExtension = page.extensions.newsletterCheckout %}
+    {% if newsletterExtension and newsletterExtension.showCheckbox %}
+        <div class="confirm-newsletter mb-4">
+            <div class="card checkout-card">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{ 'checkout.confirmNewsletterHeader'|trans|sw_sanitize }}
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox"
+                               class="form-check-input"
+                               id="newsletterCheckout"
+                               name="newsletterCheckout"
+                               form="confirmOrderForm"
+                               value="1">
+                        <label class="form-check-label" for="newsletterCheckout">
+                            {{ "checkout.confirmNewsletterSubscribe"|trans|sw_sanitize }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title lang="en-GB">Basic configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+
+        <input-field type="bool">
+            <name>active</name>
+            <label lang="en-GB">Show newsletter checkbox</label>
+            <label lang="de-DE">Newsletter-Checkbox anzeigen</label>
+            <helpText lang="en-GB">Enable or disable the newsletter checkbox on the checkout confirmation page</helpText>
+            <helpText lang="de-DE">Aktiviert oder deaktiviert die Newsletter-Checkbox auf der Bestellbestätigungsseite</helpText>
+            <defaultValue>true</defaultValue>
+        </input-field>
+    </card>
+</config>

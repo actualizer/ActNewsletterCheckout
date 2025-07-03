@@ -1,0 +1,32 @@
+{
+    "name": "act/newsletter-checkout",
+    "description": "Actualize: Newsletter subscription checkbox on checkout confirm page",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Actualize"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "shopware/core": ">=6.6.10 <6.8.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Act\\NewsletterCheckout\\ActNewsletterCheckout",
+        "label": {
+            "de-DE": "Actualize: Newsletter-Anmeldung im Checkout",
+            "en-GB": "Actualize: Newsletter subscription in checkout"
+        },
+        "description": {
+            "de-DE": "Fügt eine Newsletter-Anmeldung Checkbox auf der Bestellbestätigungsseite hinzu",
+            "en-GB": "Adds newsletter subscription checkbox to the order confirmation page"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Act\\NewsletterCheckout\\": "src/"
+        }
+    }
+}
