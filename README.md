@@ -72,6 +72,7 @@ Translation keys:
 ```
 ActNewsletterCheckout/
 ├── composer.json
+├── LICENSE
 ├── README.md
 ├── src/
 │   ├── ActNewsletterCheckout.php
