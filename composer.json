@@ -1,7 +1,7 @@
 {
     "name": "act/newsletter-checkout",
     "description": "Actualize: Newsletter subscription checkbox on checkout confirm page",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
