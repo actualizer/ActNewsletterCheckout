@@ -80,23 +80,34 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
             return;
         }
 
+        // Skip if this is not a storefront request (e.g., backend order creation)
+        if (!$request->attributes->has('sw-sales-channel-id')) {
+            return;
+        }
+
         $newsletterSubscribe = $request->request->get(self::NEWSLETTER_CHECKOUT_KEY);
-        
+
         if ($newsletterSubscribe === '1') {
             $convertedCart = $event->getConvertedCart();
             $customFields = $convertedCart['customFields'] ?? [];
             $customFields[self::NEWSLETTER_CHECKOUT_KEY] = true;
             $convertedCart['customFields'] = $customFields;
-            
+
             $event->setConvertedCart($convertedCart);
         }
     }
 
     public function onOrderPlaced(CheckoutOrderPlacedEvent $event): void
     {
+        // Skip if this is not a storefront request (e.g., backend order creation)
+        $request = $this->requestStack->getCurrentRequest();
+        if (!$request || !$request->attributes->has('sw-sales-channel-id')) {
+            return;
+        }
+
         $order = $event->getOrder();
         $customFields = $order->getCustomFields();
-        
+
         if (!isset($customFields[self::NEWSLETTER_CHECKOUT_KEY]) || !$customFields[self::NEWSLETTER_CHECKOUT_KEY]) {
             return;
         }
