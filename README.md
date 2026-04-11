@@ -4,13 +4,13 @@ A Shopware 6 plugin that adds a newsletter subscription checkbox to the checkout
 
 ## Features
 
-- ✅ Newsletter subscription checkbox on checkout confirmation page
-- ✅ Checks if customer is already subscribed (won't show checkbox if already subscribed)
-- ✅ Newsletter subscription is only processed when order is completed
-- ✅ Integrates with Shopware's native newsletter system and double opt-in flow
-- ✅ Admin configuration to enable/disable the feature
-- ✅ Multi-language support (German & English)
-- ✅ Compatible with Shopware 6.6.10 - 6.7.x
+- Newsletter subscription checkbox on checkout confirmation page
+- Checks if customer is already subscribed (won't show checkbox if already subscribed)
+- Newsletter subscription is only processed when order is completed
+- Integrates with Shopware's native newsletter system and double opt-in flow
+- Admin configuration to enable/disable the feature
+- Multi-language support (German & English)
+- Compatible with Shopware 6.6.10 - 6.7.x
 
 ## Requirements
 
@@ -66,34 +66,6 @@ The plugin includes translations for:
 Translation keys:
 - `checkout.confirmNewsletterHeader`
 - `checkout.confirmNewsletterSubscribe`
-
-## File Structure
-
-```
-ActNewsletterCheckout/
-├── composer.json
-├── LICENSE
-├── README.md
-├── src/
-│   ├── ActNewsletterCheckout.php
-│   ├── Resources/
-│   │   ├── config/
-│   │   │   ├── config.xml
-│   │   │   └── services.xml
-│   │   ├── snippet/
-│   │   │   ├── de_DE/
-│   │   │   │   └── storefront.de-DE.json
-│   │   │   └── en_GB/
-│   │   │       └── storefront.en-GB.json
-│   │   └── views/
-│   │       └── storefront/
-│   │           └── page/
-│   │               └── checkout/
-│   │                   └── confirm/
-│   │                       └── index.html.twig
-│   └── Subscriber/
-│       └── CheckoutConfirmSubscriber.php
-```
 
 ## Development
 
