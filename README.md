@@ -19,6 +19,17 @@ A Shopware 6 plugin that adds a newsletter subscription checkbox to the checkout
 
 ## Installation
 
+### Via Composer (recommended)
+
+```bash
+composer require actualizer/newsletter-checkout
+bin/console plugin:refresh
+bin/console plugin:install --activate ActNewsletterCheckout
+bin/console cache:clear
+```
+
+### Manual
+
 1. Download or clone this plugin into your `custom/plugins/` directory
 2. Install and activate the plugin via CLI:
    ```bash
