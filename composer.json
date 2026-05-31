@@ -1,17 +1,24 @@
 {
     "name": "actualizer/newsletter-checkout",
     "description": "Actualize: Newsletter subscription checkbox on checkout confirm page",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Actualize"
+            "name": "Actualize",
+            "email": "plugin@actualize.de",
+            "homepage": "https://actualize.de",
+            "role": "Developer"
         }
     ],
     "require": {
         "php": ">=8.3",
         "shopware/core": ">=6.6.10 <6.8.0"
+    },
+    "scripts": {
+        "format": "docker run --rm -v $(pwd):/ext shopware/shopware-cli:latest extension format /ext",
+        "check": "docker run --rm -v $(pwd):/ext shopware/shopware-cli:latest extension validate --full /ext"
     },
     "extra": {
         "shopware-plugin-class": "Act\\NewsletterCheckout\\ActNewsletterCheckout",
@@ -20,8 +27,16 @@
             "en-GB": "Actualize: Newsletter subscription in checkout"
         },
         "description": {
-            "de-DE": "Fügt eine Newsletter-Anmeldung Checkbox auf der Bestellbestätigungsseite hinzu",
-            "en-GB": "Adds newsletter subscription checkbox to the order confirmation page"
+            "de-DE": "Fügt auf der Bestellbestätigungsseite eine Newsletter-Anmelde-Checkbox hinzu und meldet zustimmende Kunden nach dem Kauf automatisch per Double-Opt-In am Newsletter an.",
+            "en-GB": "Adds a newsletter opt-in checkbox to the checkout confirmation page and automatically subscribes consenting customers to the newsletter via double opt-in after purchase."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://actualize.de",
+            "en-GB": "https://actualize.de"
+        },
+        "supportLink": {
+            "de-DE": "https://github.com/actualizer/ActNewsletterCheckout/issues",
+            "en-GB": "https://github.com/actualizer/ActNewsletterCheckout/issues"
         }
     },
     "autoload": {

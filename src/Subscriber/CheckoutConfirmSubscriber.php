@@ -4,6 +4,7 @@ namespace Act\NewsletterCheckout\Subscriber;
 
 use Shopware\Core\Checkout\Cart\Order\CartConvertedEvent;
 use Shopware\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
+use Shopware\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientCollection;
 use Shopware\Core\Content\Newsletter\SalesChannel\AbstractNewsletterSubscribeRoute;
 use Shopware\Core\Content\Newsletter\SalesChannel\NewsletterSubscribeRoute;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -24,6 +25,9 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
 {
     private const string NEWSLETTER_CHECKOUT_KEY = 'newsletterCheckout';
 
+    /**
+     * @param EntityRepository<NewsletterRecipientCollection> $newsletterRecipientRepository
+     */
     public function __construct(
         private readonly EntityRepository $newsletterRecipientRepository,
         private readonly SystemConfigService $systemConfigService,
