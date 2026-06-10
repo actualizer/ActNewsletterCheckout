@@ -15,7 +15,7 @@ A Shopware 6 plugin that adds a newsletter subscription checkbox to the checkout
 ## Requirements
 
 - Shopware 6.6.10 or higher (up to 6.7.x)
-- PHP 8.3 or higher
+- PHP 8.2 or higher
 
 ## Installation
 
@@ -93,7 +93,7 @@ The plugin respects Shopware's logging configuration. Check your log files for a
 ## Compatibility
 
 - **Shopware Version**: 6.6.10 - 6.7.x
-- **PHP Version**: 8.3+
+- **PHP Version**: 8.2+
 - **Template Compatibility**: Uses Shopware 6.6+ template structure
 
 ## Support
