@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class CheckoutConfirmSubscriber implements EventSubscriberInterface
 {
-    private const string NEWSLETTER_CHECKOUT_KEY = 'newsletterCheckout';
+    private const NEWSLETTER_CHECKOUT_KEY = 'newsletterCheckout';
 
     /**
      * @param EntityRepository<NewsletterRecipientCollection> $newsletterRecipientRepository
