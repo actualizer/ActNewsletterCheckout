@@ -160,7 +160,7 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         ]);
 
         try {
-            $this->newsletterSubscribeRoute->subscribe(
+            $this->newsletterSubscribeRoute->subscribeWithResponse(
                 $dataBag,
                 $salesChannelContext,
                 true
