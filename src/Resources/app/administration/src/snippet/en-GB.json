@@ -1,0 +1,18 @@
+{
+    "act-newsletter-checkout": {
+        "settings": {
+            "info": {
+                "howTo": {
+                    "title": "How it works",
+                    "item1": "The checkbox appears in the checkout on the confirmation page, below the terms agreement, as soon as <strong>Show newsletter checkbox</strong> is active.",
+                    "item2": "It only appears when the email address is not subscribed to the newsletter yet — for addresses that already are, the spot stays empty.",
+                    "item3": "Guest orders are included; a customer account is not required to subscribe.",
+                    "item4": "The subscription happens when the order is submitted, not when the box is ticked.",
+                    "item5": "Whether a confirmation email is required is decided by the shop's double opt-in setting — this plugin does not change it."
+                },
+                "description": "Adds a newsletter opt-in checkbox to the checkout confirmation page and automatically subscribes consenting customers to the newsletter via double opt-in after purchase.",
+                "issues": "Problems or feature requests?"
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "act-newsletter-checkout": {
+        "settings": {
+            "info": {
+                "howTo": {
+                    "title": "So funktioniert's",
+                    "item1": "Die Checkbox erscheint im Checkout auf der Bestätigungsseite unterhalb der AGB-Zustimmung, sobald <strong>Newsletter-Checkbox anzeigen</strong> aktiv ist.",
+                    "item2": "Sie erscheint nur, wenn die E-Mail-Adresse noch nicht für den Newsletter angemeldet ist — bei bereits angemeldeten Adressen bleibt die Stelle leer.",
+                    "item3": "Gastbestellungen sind eingeschlossen; ein Kundenkonto ist für die Newsletter-Anmeldung nicht nötig.",
+                    "item4": "Angemeldet wird erst mit dem Absenden der Bestellung, nicht schon beim Setzen des Hakens.",
+                    "item5": "Ob eine Bestätigungsmail nötig ist, entscheidet die Double-Opt-In-Einstellung des Shops — dieses Plugin ändert sie nicht."
+                },
+                "description": "Fügt auf der Bestellbestätigungsseite eine Newsletter-Anmelde-Checkbox hinzu und meldet zustimmende Kunden nach dem Kauf automatisch per Double-Opt-In am Newsletter an.",
+                "issues": "Probleme oder Feature-Wünsche?"
+            }
+        }
+    }
+}

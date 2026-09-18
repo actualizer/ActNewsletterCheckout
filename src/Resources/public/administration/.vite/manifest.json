@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/act-newsletter-checkout-ClMu-GYC.js",
+    "name": "act-newsletter-checkout",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/act-newsletter-checkout-DdkXa8QE.css"
+    ]
+  }
+}
