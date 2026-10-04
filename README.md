@@ -88,7 +88,7 @@ bin/console theme:compile
 ```
 
 ### Debugging
-The plugin respects Shopware's logging configuration. Check your log files for any newsletter subscription errors.
+The plugin respects Shopware's logging configuration. Check your log files for any newsletter subscription errors. An entry names the order ID, not the customer's email address.
 
 ## Compatibility
 

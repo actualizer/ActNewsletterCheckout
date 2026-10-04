@@ -167,7 +167,6 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
             );
         } catch (\Throwable $e) {
             $this->logger->error('Newsletter subscription failed during checkout', [
-                'email' => $orderCustomer->getEmail(),
                 'orderId' => $order->getId(),
                 'error' => $e->getMessage(),
             ]);
