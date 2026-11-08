@@ -2,6 +2,11 @@
 
 A Shopware 6 plugin that adds a newsletter subscription checkbox to the checkout confirmation page, allowing customers to subscribe to the newsletter during the order process.
 
+## Requirements
+
+- Shopware `>=6.7 <6.8`, tested with 6.7.16.0
+- PHP 8.4 or higher
+
 ## Features
 
 - Newsletter subscription checkbox on checkout confirmation page
@@ -10,11 +15,6 @@ A Shopware 6 plugin that adds a newsletter subscription checkbox to the checkout
 - Integrates with Shopware's native newsletter system and double opt-in flow
 - Admin configuration to enable/disable the feature
 - Multi-language support (German & English)
-
-## Requirements
-
-- Shopware `>=6.7 <6.8`, tested with 6.7.16.0
-- PHP 8.4 or higher
 
 ## Installation
 
