@@ -57,7 +57,7 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         }
         
         $customer = $event->getSalesChannelContext()->getCustomer();
-        if (!$customer) {
+        if ($customer === null) {
             return;
         }
 
@@ -81,7 +81,7 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
     public function onCartConverted(CartConvertedEvent $event): void
     {
         $request = $this->requestStack->getCurrentRequest();
-        if (!$request) {
+        if ($request === null) {
             return;
         }
 
@@ -106,19 +106,19 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
     {
         // Skip if this is not a storefront request (e.g., backend order creation)
         $request = $this->requestStack->getCurrentRequest();
-        if (!$request || !$request->attributes->has('sw-sales-channel-id')) {
+        if ($request === null || !$request->attributes->has('sw-sales-channel-id')) {
             return;
         }
 
         $order = $event->getOrder();
         $customFields = $order->getCustomFields();
 
-        if (!isset($customFields[self::NEWSLETTER_CHECKOUT_KEY]) || !$customFields[self::NEWSLETTER_CHECKOUT_KEY]) {
+        if (!isset($customFields[self::NEWSLETTER_CHECKOUT_KEY]) || !(bool) $customFields[self::NEWSLETTER_CHECKOUT_KEY]) {
             return;
         }
 
         $orderCustomer = $order->getOrderCustomer();
-        if (!$orderCustomer) {
+        if ($orderCustomer === null) {
             return;
         }
 
@@ -126,7 +126,7 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         
         // Check if this is a real registered customer or a guest
         $customer = $orderCustomer->getCustomer();
-        $isRealCustomer = $customer && $customer->getGuest() === false;
+        $isRealCustomer = $customer !== null && $customer->getGuest() === false;
         
         if ($isRealCustomer) {
             // For real registered customers, include customer context
@@ -148,7 +148,7 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         
         // Get the storefront URL from current request context
         $request = $this->requestStack->getCurrentRequest();
-        $storefrontUrl = $request ? $request->attributes->get('sw-storefront-url') : '';
+        $storefrontUrl = $request !== null ? $request->attributes->get('sw-storefront-url') : '';
         
         $dataBag = new RequestDataBag([
             'email' => $orderCustomer->getEmail(),
