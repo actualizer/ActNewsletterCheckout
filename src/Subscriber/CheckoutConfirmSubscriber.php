@@ -160,7 +160,8 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         ]);
 
         try {
-            $this->newsletterSubscribeRoute->subscribeWithResponse(
+            // subscribeWithResponse() only exists from Shopware 6.7.9.0 on.
+            $this->newsletterSubscribeRoute->subscribe(
                 $dataBag,
                 $salesChannelContext,
                 true
