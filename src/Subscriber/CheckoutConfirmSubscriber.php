@@ -160,12 +160,23 @@ class CheckoutConfirmSubscriber implements EventSubscriberInterface
         ]);
 
         try {
-            // subscribeWithResponse() only exists from Shopware 6.7.9.0 on.
-            $this->newsletterSubscribeRoute->subscribe(
-                $dataBag,
-                $salesChannelContext,
-                true
-            );
+            // subscribeWithResponse() only exists from Shopware 6.7.9.0 on; from then on
+            // subscribe() is deprecated and throws once the 6.8 feature flag is active.
+            // @phpstan-ignore function.alreadyNarrowedType (always true only against Shopware 6.7.9.0+)
+            if (method_exists($this->newsletterSubscribeRoute, 'subscribeWithResponse')) {
+                $this->newsletterSubscribeRoute->subscribeWithResponse(
+                    $dataBag,
+                    $salesChannelContext,
+                    true
+                );
+            } else {
+                // @phpstan-ignore method.deprecated (the only subscribe method before Shopware 6.7.9.0)
+                $this->newsletterSubscribeRoute->subscribe(
+                    $dataBag,
+                    $salesChannelContext,
+                    true
+                );
+            }
         } catch (\Throwable $e) {
             $this->logger->error('Newsletter subscription failed during checkout', [
                 'orderId' => $order->getId(),

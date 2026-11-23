@@ -5,6 +5,9 @@ parameters:
     # Treat them as uncertain so defensive `?->`/`?? default`/`is_*()` guards
     # are NOT flagged as redundant. Defense stays.
     treatPhpDocTypesAsCertain: false
+    # Some inline ignores only match against one supported Shopware release
+    # (lowest vs. highest) or only under shopware-cli's own rules.
+    reportUnmatchedIgnoredErrors: false
     paths:
         - src/
     excludePaths:
